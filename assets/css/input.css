@@ -44,24 +44,33 @@
   color: #ffffff !important;
 }
 
-/* Card read more button matching original */
+/* Card read more button matching original & properly aligned */
 .card-read-more-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
   width: 100%;
-  height: 45px;
-  padding: 12px 65px 0 0;
-  background: url('../uploads/2019/12/arrow-thin-wide-white.png') 90% center no-repeat #a61f1b;
+  height: 48px;
+  padding: 0 16px;
+  background-color: #a61f1b;
   font-size: 15px;
   font-weight: 700;
-  color: #ffffff;
+  color: #ffffff !important;
   text-transform: uppercase;
-  text-align: right;
-  letter-spacing: 1px;
-  transition: background-color 0.15s ease-in-out;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
 }
 .card-read-more-btn:hover {
-  background: url('../uploads/2019/12/arrow-thin-wide-white.png') 90% center no-repeat #d49657;
-  color: #ffffff;
+  background-color: #d49657;
+  color: #ffffff !important;
+}
+.card-read-more-btn .card-btn-arrow {
+  transition: transform 0.2s ease-in-out;
+}
+.card-read-more-btn:hover .card-btn-arrow {
+  transform: translateX(4px);
 }
 
 /* Sidebar button */

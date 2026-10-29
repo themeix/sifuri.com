@@ -1,24 +1,25 @@
 <footer class="bg-white mt-16" role="contentinfo">
   <!-- 4 Recent Posts Cards Row -->
-  <div class="border-t border-dotted border-[#bbbbbb] pt-12 pb-12">
+  <div class="border-t border-dotted border-[#bbbbbb] pt-12 pb-14">
     <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {% for post in site.posts limit:4 %}
-          <div class="bg-white flex flex-col justify-between h-full">
-            <div>
-              <h2 class="font-sans font-medium text-[20px] text-[#75633f] hover:text-[#d49657] leading-snug mb-2">
+          <div class="bg-white flex flex-col justify-between h-full border-t-[5px] border-[#dfb081] pt-6 group">
+            <div class="flex flex-col flex-grow">
+              <h3 class="font-sans font-bold text-[22px] sm:text-[23px] text-[#75633f] group-hover:text-[#d49657] leading-tight mb-2 transition-colors">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-              </h2>
-              <div class="text-xs text-gray-500 mb-3 font-sans">
+              </h3>
+              <div class="text-[13px] text-[#777777] mb-3 font-sans">
                 {{ post.date | date: "%B %-d, %Y" }}
               </div>
-              <p class="text-sm text-[#424242] leading-relaxed mb-6 font-sans">
-                {{ post.excerpt | default: post.content | strip_html | truncatewords: 25 }}
+              <p class="text-[14px] text-[#424242] leading-[1.65] mb-6 font-sans flex-grow">
+                {{ post.excerpt | default: post.content | strip_html | truncatewords: 24 }}
               </p>
             </div>
-            <div>
+            <div class="mt-auto">
               <a href="{{ post.url | relative_url }}" class="card-read-more-btn">
-                Read More
+                <span>READ MORE</span>
+                <img src="{{ '/assets/uploads/2019/12/arrow-thin-wide-white.png' | relative_url }}" alt="" width="41" height="21" class="card-btn-arrow inline-block" />
               </a>
             </div>
           </div>

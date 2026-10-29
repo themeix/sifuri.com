@@ -1,0 +1,61 @@
+---
+layout: default
+---
+<div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+    
+    <!-- Main Content Column (9 of 12 columns = 75% width) -->
+    <div class="lg:col-span-9 lg:pr-8 lg:border-r lg:border-dotted lg:border-[#bbbbbb] min-w-0">
+      <header class="mb-10 pb-4 border-b border-dotted border-[#bbbbbb]">
+        <h1 class="font-sans font-medium text-3xl sm:text-4xl text-[#75633f] leading-tight">
+          {{ page.title }}
+        </h1>
+        {% if page.description %}
+          <p class="text-gray-600 mt-2 text-base font-sans">{{ page.description }}</p>
+        {% endif %}
+      </header>
+
+      <div class="space-y-12">
+        {% assign filtered_posts = site.posts %}
+        {% if page.category %}
+          {% assign filtered_posts = site.categories[page.category] %}
+        {% elsif page.tag %}
+          {% assign filtered_posts = site.tags[page.tag] %}
+        {% elsif page.year_month %}
+          {% assign filtered_posts = "" | split: "" %}
+          {% for post in site.posts %}
+            {% capture post_ym %}{{ post.date | date: "%Y/%m" }}{% endcapture %}
+            {% if post_ym == page.year_month %}
+              {% assign filtered_posts = filtered_posts | push: post %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        {% for post in filtered_posts %}
+          <article class="pb-10 border-b border-dotted border-[#bbbbbb]">
+            <h2 class="font-sans text-2xl sm:text-3xl text-[#75633f] hover:text-[#d49657] leading-snug mb-2 font-medium">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            <div class="text-xs text-gray-500 mb-4 font-sans">
+              {{ post.date | date: "%B %-d, %Y" }}
+            </div>
+            <div class="text-base text-[#424242] leading-relaxed mb-4 font-sans">
+              {{ post.excerpt | default: post.content | strip_html | truncatewords: 40 }}
+            </div>
+            <a href="{{ post.url | relative_url }}" class="post-read-more-link" aria-label="Read more about {{ post.title }}">
+              Read More
+            </a>
+          </article>
+        {% else %}
+          <p class="text-gray-500 font-sans">No posts found in this archive.</p>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Sidebar Column (3 of 12 columns = 25% width) -->
+    <div class="lg:col-span-3 min-w-0">
+      {% include sidebar.html %}
+    </div>
+
+  </div>
+</div>

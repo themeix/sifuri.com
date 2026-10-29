@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+    
+    <!-- Main Content Column (9 of 12 columns = 75% width) -->
+    <div class="lg:col-span-9 lg:pr-8 lg:border-r lg:border-dotted lg:border-[#bbbbbb] min-w-0">
+      
+      <!-- Post Feed -->
+      <div class="space-y-10">
+        {% for post in paginator.posts %}
+          <article class="pb-10 border-b border-dotted border-[#bbbbbb]">
+            <!-- Post Title -->
+            <h2 class="font-sans font-medium text-2xl sm:text-3xl text-[#75633f] hover:text-[#d49657] leading-snug mb-2">
+              <a href="{{ post.url | relative_url }}" class="hover:text-[#d49657] transition-colors">{{ post.title }}</a>
+            </h2>
+
+            <!-- Post Meta -->
+            <div class="text-xs text-gray-500 mb-4 font-sans">
+              By <span class="text-black">{{ post.author | default: "rickcolosimo" }}</span> / {{ post.date | date: "%B %-d, %Y" }} / Comments Off
+            </div>
+
+            <!-- Post Excerpt -->
+            <div class="text-base text-[#424242] leading-relaxed mb-4 font-sans">
+              {{ post.excerpt | default: post.content | strip_html | truncatewords: 45 }}
+            </div>
+
+            <!-- Read More Link with Arrow -->
+            <div>
+              <a href="{{ post.url | relative_url }}" class="post-read-more-link font-sans" aria-label="Read more about {{ post.title }}">
+                Read More
+              </a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      <!-- Pagination -->
+      {% include pagination.html %}
+
+    </div>
+
+    <!-- Sidebar Column (3 of 12 columns = 25% width) -->
+    <div class="lg:col-span-3 min-w-0">
+      {% include sidebar.html %}
+    </div>
+
+  </div>
+</div>

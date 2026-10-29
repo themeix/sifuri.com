@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-crimson: #a61f1b;
+  --color-brand-amber: #d49657;
+  --color-brand-brown: #a26e35;
+  --color-brand-heading: #75633f;
+  --color-brand-gray: #424242;
+  --color-brand-bg-light: #f4ead8;
+  --color-brand-bg-dark: #c1864b;
+  --font-sans: 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html, body {
+    background: rgb(244, 234, 216);
+    background: linear-gradient(180deg, rgba(244, 234, 216, 1) 0%, rgba(193, 134, 75, 1) 80%);
+    min-height: 100vh;
+    font-family: 'Work Sans', sans-serif;
+    color: #424242;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    color: #75633f;
+    line-height: 1.4;
+  }
+}
+
+/* Post feed button styles matching original Beaver Builder */
+.post-read-more-link {
+  display: inline-block;
+  padding: 10px 30px 10px 15px;
+  background: url('../uploads/2019/12/arrow-red-sm.png') 95% center no-repeat;
+  color: #a61f1b;
+  font-size: 14px;
+  transition: all 0.15s ease-in-out;
+}
+.post-read-more-link:hover {
+  background: url('../uploads/2019/12/arrow-wht-sm.png') 95% center no-repeat #d49657;
+  color: #ffffff !important;
+}
+
+/* Card read more button matching original */
+.card-read-more-btn {
+  display: block;
+  width: 100%;
+  height: 45px;
+  padding: 12px 65px 0 0;
+  background: url('../uploads/2019/12/arrow-thin-wide-white.png') 90% center no-repeat #a61f1b;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: right;
+  letter-spacing: 1px;
+  transition: background-color 0.15s ease-in-out;
+}
+.card-read-more-btn:hover {
+  background: url('../uploads/2019/12/arrow-thin-wide-white.png') 90% center no-repeat #d49657;
+  color: #ffffff;
+}
+
+/* Sidebar button */
+.sidebar-all-posts-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 20px;
+  background-color: #a61f1b;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  transition: background-color 0.15s ease-in-out;
+}
+.sidebar-all-posts-btn:hover {
+  background-color: #d49657;
+  color: #ffffff;
+}
+
+/* Sidebar widget list bullet */
+.sidebar-list li {
+  padding: 6px 0 10px;
+  border-bottom: 1px dotted #bbbbbb;
+  font-size: 14px;
+}
+.sidebar-list li:last-child {
+  border-bottom: 0 none;
+  margin-bottom: 0;
+}
+.sidebar-list li::before {
+  content: "►";
+  display: inline-block;
+  margin-right: 0.6em;
+  color: #a61f1b;
+}
+
+/* Back to top fixed button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 2em;
+  right: 0;
+  z-index: 50;
+  background: #a61f1b;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0.75em 1.25em;
+  text-decoration: none;
+  transition: background-color 0.15s ease-in-out;
+}
+.back-to-top-btn:hover {
+  background: #d49657;
+  color: #ffffff !important;
+}
+
+/* Content typography matching sifuri.com */
+.prose-custom p {
+  margin-bottom: 1.5rem;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #424242;
+}
+.prose-custom h1 {
+  font-size: 42px;
+  line-height: 1.4;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: #75633f;
+}
+.prose-custom h2 {
+  font-size: 30px;
+  line-height: 1.4;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #75633f;
+}
+.prose-custom h3 {
+  font-size: 24px;
+  line-height: 1.4;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: #75633f;
+}
+.prose-custom h4 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #75633f;
+}
+.prose-custom ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.prose-custom ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.prose-custom li {
+  margin-left: 15px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 18px;
+}
+.prose-custom hr {
+  border: none;
+  border-bottom: 1px dotted #bbbbbb;
+  margin-top: 50px;
+  margin-bottom: 52px;
+}
+.prose-custom a {
+  color: #a61f1b;
+  text-decoration: none;
+}
+.prose-custom a:hover {
+  text-decoration: underline;
+  color: #d49657;
+}
+.prose-custom blockquote {
+  border-left: 4px solid #d49657;
+  padding-left: 1.25rem;
+  font-style: italic;
+  margin: 1.5rem 0;
+  color: #555555;
+}
+.prose-custom table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+.prose-custom th, .prose-custom td {
+  border: 1px solid #dddddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+.prose-custom th {
+  background-color: #f7f7f7;
+  font-weight: 700;
+}
+.prose-custom iframe {
+  max-width: 100%;
+}

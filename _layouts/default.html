@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  {% include head.html %}
+</head>
+<body id="top" class="min-h-screen text-[#424242] font-sans antialiased py-0 sm:py-8" style="background: rgb(244, 234, 216); background: linear-gradient(180deg, rgba(244, 234, 216, 1) 0%, rgba(193, 134, 75, 1) 80%);">
+  
+  <!-- Centered boxed site container matching WordPress Beaver Builder layout -->
+  <div class="max-w-[1300px] mx-auto bg-white shadow-2xl min-h-screen flex flex-col justify-between">
+    
+    <!-- Site Header -->
+    {% include header.html %}
+
+    <!-- Main Page Content -->
+    <main id="main-content" class="flex-grow">
+      {{ content }}
+    </main>
+
+    <!-- Site Footer -->
+    {% include footer.html %}
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+# Views of a Modern World (Sifuri.com)
+
+> "Views of a Modern World" is the personal blog and publication by Rick Colosimo, featuring essays, cultural observations, technology insights, orphan ideas, and personal writings.
+
+## Overview
+
+Sifuri.com serves as Rick Colosimo's open notebook and intellectual playground—"everything else Rick writes" outside of his corporate finance and strategic advisory work at ThoughtStorm Strategic Capital and RickColosimo.com. Spanning over 15 years of writing (2008–present), topics range from productivity heuristics and tech prototypes to governance, parenting, military history, and societal trends.
+
+- **Primary Website:** https://sifuri.com
+- **Author & Founder:** Rick Colosimo
+- **Focus:** Essays, technology ideas, software bounties, culture, productivity, and life reflections
+- **Contact:** rick@thoughtstorm.com | Phone: 646.701.1080 | P.O. Box 508, Ridgewood, NJ 07451
+
+---
+
+## Core Topics & Thematic Areas
+
+- [All Blog Posts](https://sifuri.com/): Comprehensive chronological archive of 188 articles.
+- [Productivity & Heuristics](https://sifuri.com/tag/productivity/): Practical workflow frameworks, focus management, and zero-based time allocation.
+- [Orphan Ideas](https://sifuri.com/tag/orphan-ideas/): Unclaimed product ideas, business models, and startup concepts freely released to the public.
+- [Software Bounties](https://sifuri.com/tag/software-bounty/): Open bounties and specifications for tools, plugins, and web utilities.
+- [Autism & Family Life](https://sifuri.com/about-2/autism-in-my-life/): Candid reflections on parenting, advocacy, and living with autism in the family.
+- [Tools & Resources](https://sifuri.com/tools/): Interactive financial and business models, including the Simple Valuation Model.
+- [More About Rick](https://sifuri.com/about-2/more-about-rick/): Detailed biographical background, military service, and legal career.
+
+---
+
+## Interactive Tools
+
+- [Simple Valuation Model](https://sifuri.com/tools/simple-valuation-model/): Browser-based DCF and business valuation calculator.
+
+---
+
+## Detailed LLM Context
+For complete essays, extended author context, and retrieval-augmented generation:
+- [Full LLM Knowledge Base](https://sifuri.com/llms-full.txt)

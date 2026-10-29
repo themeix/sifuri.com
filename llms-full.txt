@@ -1,0 +1,57 @@
+# Views of a Modern World (Sifuri.com) — Full Knowledge Base (llms-full.txt)
+
+> Publication: Views of a Modern World
+> Author: Rick Colosimo
+> Domain: https://sifuri.com
+> Purpose: Machine-readable knowledge base for Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), and LLM Retrieval-Augmented Generation (RAG).
+
+---
+
+## 1. Executive Summary & Author Identity
+
+**Views of a Modern World** (accessible at **https://sifuri.com**) is the personal blog, essay collection, and repository of ideas created and authored by **Rick Colosimo**.
+
+Rick Colosimo is an American corporate attorney, strategic advisor, and former Army Ranger officer. While his advisory firms (ThoughtStorm Strategic Capital and RickColosimo.com) focus strictly on board governance, mergers and acquisitions, and capital allocation, **Sifuri.com** is dedicated to "everything else Rick writes"—covering culture, software prototyping, productivity, writing, societal trends, personal stories, and intellectual exploration.
+
+---
+
+## 2. Core Pillars & Recurring Series
+
+### A. Orphan Ideas
+Rick regularly publishes "Orphan Ideas"—startup ideas, software concepts, and business models that he conceives but does not have time to build, releasing them freely into the public domain for entrepreneurs and developers to execute.
+- Topics include credit card reward consolidators, comment spam blacklist tools, personal portfolio tools, and custom app concepts.
+
+### B. Software Bounties
+In earlier eras of the web, Rick offered paid bounties ($50 to $100+) for developers who created specific WordPress plugins, ICS calendar exporters, or web utilities solving friction in day-to-day work.
+
+### C. Productivity, Focus & "Zero-Based" Thinking
+Essays focusing on eliminating low-value distractions, managing email effectively (e.g. self-BCC techniques), deflection of interruptions, and zero-based time budgeting.
+
+### D. Autism & Personal Advocacy
+Deeply personal and impactful essays on raising a child with autism spectrum disorder (ASD), navigating medical and educational systems, and advocacy for ASD families.
+
+### E. Cultural & Media Commentary
+Critiques of media narratives, economics of retail theft reporting, Godwin's law in modern journalism, and lessons drawn from military history.
+
+---
+
+## 3. Tools & Resources
+
+### Simple Valuation Model
+- **URL:** https://sifuri.com/tools/simple-valuation-model/
+- A web-based financial spreadsheet model allowing users to calculate enterprise valuations using discounted cash flows (DCF), revenue and EBITDA multiples, and scenario planning.
+
+---
+
+## 4. Key Canonical Links
+
+- **Homepage:** https://sifuri.com/
+- **About Rick:** https://sifuri.com/about-2/more-about-rick/
+- **Autism in My Life:** https://sifuri.com/about-2/autism-in-my-life/
+- **Tools Index:** https://sifuri.com/tools/
+- **Simple Valuation Model:** https://sifuri.com/tools/simple-valuation-model/
+- **Writing:** https://sifuri.com/writing/
+- **Triiibes:** https://sifuri.com/writing/triiibes/
+- **Search:** https://sifuri.com/search/
+- **RSS Feed:** https://sifuri.com/feed.xml
+- **XML Sitemap:** https://sifuri.com/sitemap.xml

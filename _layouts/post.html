@@ -1,0 +1,75 @@
+---
+layout: default
+---
+<div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+    
+    <!-- Main Content Column (9 of 12 columns = 75% width) -->
+    <div class="lg:col-span-9 lg:pr-8 lg:border-r lg:border-dotted lg:border-[#bbbbbb] min-w-0">
+      <article class="prose-custom">
+        
+        <!-- Post Title -->
+        <h1 class="font-sans font-medium text-3xl sm:text-4xl lg:text-[42px] text-[#75633f] leading-[1.4] mb-2">
+          {{ page.title }}
+        </h1>
+
+        <!-- Post Meta -->
+        <div class="text-xs text-gray-500 mb-8 pb-4 border-b border-dotted border-[#bbbbbb] font-sans">
+          By <span class="text-black">{{ page.author | default: "rickcolosimo" }}</span> / {{ page.date | date: "%B %-d, %Y" }} / Comments Off
+        </div>
+
+        <!-- Post Body -->
+        <div class="entry-content leading-relaxed text-[18px]">
+          {{ content }}
+        </div>
+
+        <!-- Post Taxonomies -->
+        {% if page.categories or page.tags %}
+          <div class="mt-12 pt-6 border-t border-dotted border-[#bbbbbb] text-sm text-gray-600 space-y-2 font-sans">
+            {% if page.categories.size > 0 %}
+              <div>
+                <span class="font-bold text-black uppercase tracking-wider text-xs">Categories:</span>
+                {% for cat in page.categories %}
+                  <a href="{{ '/category/' | append: cat | slugify | append: '/' | relative_url }}" class="text-[#a61f1b] hover:underline mr-2">{{ cat }}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if page.tags.size > 0 %}
+              <div>
+                <span class="font-bold text-black uppercase tracking-wider text-xs">Tags:</span>
+                {% for tag in page.tags %}
+                  <a href="{{ '/tag/' | append: tag | slugify | append: '/' | relative_url }}" class="text-gray-700 hover:text-[#a61f1b] hover:underline mr-2">#{{ tag }}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        <!-- Prev / Next Post Navigation -->
+        <div class="mt-12 pt-6 border-t border-dotted border-[#bbbbbb] flex flex-col sm:flex-row justify-between gap-4 font-sans text-sm">
+          {% if page.previous.url %}
+            <a href="{{ page.previous.url | relative_url }}" class="text-[#a61f1b] hover:text-[#d49657] hover:underline flex items-center">
+              « {{ page.previous.title | truncate: 45 }}
+            </a>
+          {% else %}
+            <div></div>
+          {% endif %}
+
+          {% if page.next.url %}
+            <a href="{{ page.next.url | relative_url }}" class="text-[#a61f1b] hover:text-[#d49657] hover:underline flex items-center justify-end">
+              {{ page.next.title | truncate: 45 }} »
+            </a>
+          {% endif %}
+        </div>
+
+      </article>
+    </div>
+
+    <!-- Sidebar Column (3 of 12 columns = 25% width) -->
+    <div class="lg:col-span-3 min-w-0">
+      {% include sidebar.html %}
+    </div>
+
+  </div>
+</div>

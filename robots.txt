@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sifuri.com/sitemap.xml
+
+# LLMs & AI Search Engine Optimization (GEO/AEO)
+# Specification: https://llmstxt.org/
+LLM-Context: https://sifuri.com/llms.txt
+LLM-Full-Context: https://sifuri.com/llms-full.txt

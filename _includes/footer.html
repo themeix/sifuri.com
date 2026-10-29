@@ -1,0 +1,82 @@
+<footer class="bg-white mt-16" role="contentinfo">
+  <!-- 4 Recent Posts Cards Row -->
+  <div class="border-t border-dotted border-[#bbbbbb] pt-12 pb-12">
+    <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {% for post in site.posts limit:4 %}
+          <div class="bg-white flex flex-col justify-between h-full">
+            <div>
+              <h2 class="font-sans font-medium text-[20px] text-[#75633f] hover:text-[#d49657] leading-snug mb-2">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h2>
+              <div class="text-xs text-gray-500 mb-3 font-sans">
+                {{ post.date | date: "%B %-d, %Y" }}
+              </div>
+              <p class="text-sm text-[#424242] leading-relaxed mb-6 font-sans">
+                {{ post.excerpt | default: post.content | strip_html | truncatewords: 25 }}
+              </p>
+            </div>
+            <div>
+              <a href="{{ post.url | relative_url }}" class="card-read-more-btn">
+                Read More
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Bar -->
+  <div class="bg-[#a26e35] text-white py-10 border-t border-[#c1864b]">
+    <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        
+        <!-- Left: Contact Heading -->
+        <div>
+          <h4 class="font-sans text-xl sm:text-2xl uppercase tracking-[5px] text-white font-medium">
+            Contact Rick Colosimo
+          </h4>
+        </div>
+
+        <!-- Middle: Contact Details -->
+        <div class="space-y-1.5 text-base font-sans text-white">
+          <p>
+            <a href="mailto:{{ site.data.settings.author.email }}" class="text-white hover:underline transition-colors">
+              {{ site.data.settings.author.email }}
+            </a>
+          </p>
+          <p>{{ site.data.settings.author.phone }}</p>
+          <p>{{ site.data.settings.author.address }}</p>
+        </div>
+
+        <!-- Right: Badges -->
+        <div class="flex justify-start md:justify-end">
+          <img src="{{ '/assets/uploads/2021/02/badge.png' | relative_url }}" alt="Ranger - Nec Aspera Terrent" width="190" height="115" class="h-auto max-w-[190px]" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Copyright Bar -->
+  <div class="bg-[#a26e35] text-white py-4 border-t border-[#c1864b]/40 text-[10px] sm:text-[11px] uppercase tracking-[2px] font-sans">
+    <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2 text-white/90">
+      <div class="flex items-center gap-1.5">
+        <span>Site Design:</span>
+        <a href="{{ site.data.settings.site_design_url | default: 'https://brightbirdcreative.com/' }}" target="_blank" rel="noopener noreferrer" class="hover:text-white underline">
+          {{ site.data.settings.site_design | default: "Bright Bird Creative" }}
+        </a>
+        <img src="{{ '/assets/uploads/2018/08/icon-21x16-bbc-white.png' | relative_url }}" alt="" width="14" height="11" class="inline ml-1" />
+      </div>
+      <div>
+        {{ site.data.settings.copyright }}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Back to Top Button -->
+<a href="#top" class="back-to-top-btn" aria-label="Back to Top">
+  Back to Top ▲
+</a>

@@ -1,0 +1,155 @@
+<aside class="w-full space-y-8" aria-label="Sidebar">
+  <!-- Search Widget 1 -->
+  <div class="widget">
+    <form action="{{ '/search/' | relative_url }}" method="get" role="search">
+      <input type="search" name="q" placeholder="Search" aria-label="Search" class="w-full px-6 py-4 bg-white border-2 border-[#ccc] text-[#6c6c6c] text-base focus:border-[#a61f1b] focus:outline-none transition-colors" />
+    </form>
+  </div>
+
+  <!-- All Blog Posts Button Widget 1 -->
+  <div class="widget">
+    <a href="{{ '/' | relative_url }}" class="sidebar-all-posts-btn group">
+      <span>All Blog Posts</span>
+      <img src="{{ '/assets/uploads/2019/12/arrow-thin-wide-white.png' | relative_url }}" alt="" width="36" height="18" class="transform group-hover:translate-x-1 transition-transform" />
+    </a>
+  </div>
+
+  <!-- Recent Posts Widget -->
+  <div class="widget">
+    <h4 class="font-sans text-[18px] font-medium text-[#75633f] pb-2 mb-3 border-b border-dotted border-[#bbbbbb]">Recent Posts</h4>
+    <ul class="sidebar-list">
+      {% for post in site.posts limit:5 %}
+        <li>
+          <a href="{{ post.url | relative_url }}" class="text-[#a61f1b] hover:text-[#d49657] hover:underline transition-colors leading-snug">
+            {{ post.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- Archives Dropdown Widget -->
+  <div class="widget">
+    <h4 class="font-sans text-[18px] font-medium text-[#75633f] pb-2 mb-3 border-b border-dotted border-[#bbbbbb]">Archives</h4>
+    <label class="sr-only" for="sidebar-archives-select">Select Month</label>
+    <select id="sidebar-archives-select" class="w-full px-6 py-3 bg-white border-2 border-[#ccc] text-[#6c6c6c] text-sm focus:border-[#a61f1b] focus:outline-none" onchange="if(this.value) window.location.href=this.value;">
+      <option value="">Select Month</option>
+      <option value="{{ '/2023/10/' | relative_url }}">October 2023</option>
+      <option value="{{ '/2020/06/' | relative_url }}">June 2020</option>
+      <option value="{{ '/2020/05/' | relative_url }}">May 2020</option>
+      <option value="{{ '/2020/04/' | relative_url }}">April 2020</option>
+      <option value="{{ '/2020/03/' | relative_url }}">March 2020</option>
+      <option value="{{ '/2020/02/' | relative_url }}">February 2020</option>
+      <option value="{{ '/2019/08/' | relative_url }}">August 2019</option>
+      <option value="{{ '/2019/07/' | relative_url }}">July 2019</option>
+      <option value="{{ '/2019/06/' | relative_url }}">June 2019</option>
+      <option value="{{ '/2017/08/' | relative_url }}">August 2017</option>
+      <option value="{{ '/2017/07/' | relative_url }}">July 2017</option>
+      <option value="{{ '/2017/02/' | relative_url }}">February 2017</option>
+      <option value="{{ '/2016/08/' | relative_url }}">August 2016</option>
+      <option value="{{ '/2016/06/' | relative_url }}">June 2016</option>
+      <option value="{{ '/2016/05/' | relative_url }}">May 2016</option>
+      <option value="{{ '/2016/03/' | relative_url }}">March 2016</option>
+      <option value="{{ '/2016/02/' | relative_url }}">February 2016</option>
+      <option value="{{ '/2015/12/' | relative_url }}">December 2015</option>
+      <option value="{{ '/2015/11/' | relative_url }}">November 2015</option>
+      <option value="{{ '/2015/06/' | relative_url }}">June 2015</option>
+      <option value="{{ '/2015/05/' | relative_url }}">May 2015</option>
+      <option value="{{ '/2014/03/' | relative_url }}">March 2014</option>
+      <option value="{{ '/2014/01/' | relative_url }}">January 2014</option>
+      <option value="{{ '/2013/10/' | relative_url }}">October 2013</option>
+      <option value="{{ '/2013/08/' | relative_url }}">August 2013</option>
+      <option value="{{ '/2013/07/' | relative_url }}">July 2013</option>
+      <option value="{{ '/2013/05/' | relative_url }}">May 2013</option>
+      <option value="{{ '/2013/04/' | relative_url }}">April 2013</option>
+      <option value="{{ '/2013/03/' | relative_url }}">March 2013</option>
+      <option value="{{ '/2013/02/' | relative_url }}">February 2013</option>
+      <option value="{{ '/2013/01/' | relative_url }}">January 2013</option>
+      <option value="{{ '/2012/12/' | relative_url }}">December 2012</option>
+      <option value="{{ '/2012/11/' | relative_url }}">November 2012</option>
+      <option value="{{ '/2012/09/' | relative_url }}">September 2012</option>
+      <option value="{{ '/2012/07/' | relative_url }}">July 2012</option>
+      <option value="{{ '/2012/06/' | relative_url }}">June 2012</option>
+      <option value="{{ '/2012/03/' | relative_url }}">March 2012</option>
+      <option value="{{ '/2011/08/' | relative_url }}">August 2011</option>
+      <option value="{{ '/2011/04/' | relative_url }}">April 2011</option>
+      <option value="{{ '/2010/12/' | relative_url }}">December 2010</option>
+      <option value="{{ '/2010/11/' | relative_url }}">November 2010</option>
+      <option value="{{ '/2010/05/' | relative_url }}">May 2010</option>
+      <option value="{{ '/2010/04/' | relative_url }}">April 2010</option>
+      <option value="{{ '/2010/03/' | relative_url }}">March 2010</option>
+      <option value="{{ '/2010/02/' | relative_url }}">February 2010</option>
+      <option value="{{ '/2010/01/' | relative_url }}">January 2010</option>
+      <option value="{{ '/2009/11/' | relative_url }}">November 2009</option>
+      <option value="{{ '/2009/10/' | relative_url }}">October 2009</option>
+      <option value="{{ '/2009/09/' | relative_url }}">September 2009</option>
+      <option value="{{ '/2009/08/' | relative_url }}">August 2009</option>
+      <option value="{{ '/2009/07/' | relative_url }}">July 2009</option>
+      <option value="{{ '/2009/06/' | relative_url }}">June 2009</option>
+      <option value="{{ '/2009/05/' | relative_url }}">May 2009</option>
+      <option value="{{ '/2009/04/' | relative_url }}">April 2009</option>
+      <option value="{{ '/2009/03/' | relative_url }}">March 2009</option>
+      <option value="{{ '/2009/02/' | relative_url }}">February 2009</option>
+      <option value="{{ '/2009/01/' | relative_url }}">January 2009</option>
+      <option value="{{ '/2008/12/' | relative_url }}">December 2008</option>
+      <option value="{{ '/2008/11/' | relative_url }}">November 2008</option>
+      <option value="{{ '/2008/09/' | relative_url }}">September 2008</option>
+      <option value="{{ '/2008/08/' | relative_url }}">August 2008</option>
+      <option value="{{ '/2008/05/' | relative_url }}">May 2008</option>
+      <option value="{{ '/2008/04/' | relative_url }}">April 2008</option>
+    </select>
+  </div>
+
+  <!-- Search Widget 2 -->
+  <div class="widget">
+    <form action="{{ '/search/' | relative_url }}" method="get" role="search">
+      <input type="search" name="q" placeholder="Search" aria-label="Search" class="w-full px-6 py-4 bg-white border-2 border-[#ccc] text-[#6c6c6c] text-base focus:border-[#a61f1b] focus:outline-none transition-colors" />
+    </form>
+  </div>
+
+  <!-- Follow on Twitter & All Blog Posts Button 2 -->
+  <div class="widget space-y-4">
+    <div>
+      <a href="{{ site.data.settings.author.twitter_url | default: 'https://twitter.com/rickcolosimo' }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-[#a61f1b] hover:text-[#d49657] font-medium text-base transition-colors">
+        <span>Follow Rick on Twitter</span>
+        <span class="ml-2">→</span>
+      </a>
+    </div>
+
+    <a href="{{ '/' | relative_url }}" class="sidebar-all-posts-btn group">
+      <span>All Blog Posts</span>
+      <img src="{{ '/assets/uploads/2019/12/arrow-thin-wide-white.png' | relative_url }}" alt="" width="36" height="18" class="transform group-hover:translate-x-1 transition-transform" />
+    </a>
+  </div>
+
+  <!-- Tags Cloud Widget -->
+  <div class="widget">
+    <h3 class="font-sans text-[20px] font-medium text-[#75633f] pb-2 mb-3 border-b border-dotted border-[#bbbbbb]">Tags</h3>
+    <div class="flex flex-wrap items-baseline gap-x-2.5 gap-y-1.5 leading-normal">
+      {% for tag in site.data.tags %}
+        {% assign count = tag.count %}
+        {% assign size_class = "text-[12px]" %}
+        {% assign font_weight = "font-normal" %}
+
+        {% if count >= 20 %}
+          {% assign size_class = "text-[26px]" %}
+          {% assign font_weight = "font-bold" %}
+        {% elsif count >= 12 %}
+          {% assign size_class = "text-[22px]" %}
+          {% assign font_weight = "font-semibold" %}
+        {% elsif count >= 7 %}
+          {% assign size_class = "text-[18px]" %}
+          {% assign font_weight = "font-medium" %}
+        {% elsif count >= 4 %}
+          {% assign size_class = "text-[15px]" %}
+        {% elsif count >= 2 %}
+          {% assign size_class = "text-[13px]" %}
+        {% endif %}
+
+        <a href="{{ '/tag/' | append: tag.slug | append: '/' | relative_url }}" class="{{ size_class }} {{ font_weight }} text-[#a61f1b] hover:text-[#d49657] hover:underline transition-colors" title="{{ tag.name }} ({{ count }} posts)">
+          {{ tag.name }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</aside>

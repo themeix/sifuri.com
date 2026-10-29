@@ -1,0 +1,103 @@
+---
+layout: default
+title: Search
+permalink: /search/
+---
+<div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+    
+    <!-- Main Content Column (9 of 12 columns = 75% width) -->
+    <div class="lg:col-span-9 lg:pr-8 lg:border-r lg:border-dotted lg:border-[#bbbbbb] min-w-0">
+      <h1 class="font-sans font-medium text-3xl sm:text-4xl text-[#75633f] leading-tight mb-8">
+        Search Results
+      </h1>
+
+      <div class="mb-8">
+        <input type="search" id="search-input" placeholder="Search articles..." class="w-full px-6 py-4 bg-white border-2 border-[#ccc] focus:border-[#a61f1b] text-gray-700 outline-none text-base">
+      </div>
+
+      <div id="search-results" class="space-y-12">
+        <p class="text-gray-500 font-sans">Loading search index...</p>
+      </div>
+    </div>
+
+    <!-- Sidebar Column (3 of 12 columns = 25% width) -->
+    <div class="lg:col-span-3 min-w-0">
+      {% include sidebar.html %}
+    </div>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+  const input = document.getElementById('search-input');
+  const container = document.getElementById('search-results');
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialQuery = urlParams.get('q') || urlParams.get('s') || '';
+
+  if (initialQuery) {
+    input.value = initialQuery;
+  }
+
+  let posts = [];
+  try {
+    const res = await fetch('{{ "/search.json" | relative_url }}');
+    posts = await res.json();
+    renderResults(input.value.trim().toLowerCase());
+  } catch (err) {
+    container.innerHTML = '<p class="text-red-600">Failed to load search index.</p>';
+    return;
+  }
+
+  input.addEventListener('input', function() {
+    renderResults(this.value.trim().toLowerCase());
+  });
+
+  function renderResults(q) {
+    if (!q) {
+      container.innerHTML = '<p class="text-gray-500">Please enter a keyword to search.</p>';
+      return;
+    }
+
+    const matches = posts.filter(p => {
+      const title = (p.title || '').toLowerCase();
+      const content = (p.content || '').toLowerCase();
+      const tags = (p.tags || []).join(' ').toLowerCase();
+      const cats = (p.categories || []).join(' ').toLowerCase();
+      return title.includes(q) || content.includes(q) || tags.includes(q) || cats.includes(q);
+    });
+
+    if (matches.length === 0) {
+      container.innerHTML = `<p class="text-gray-500">No results found for "<strong>${escapeHtml(q)}</strong>".</p>`;
+      return;
+    }
+
+    container.innerHTML = `
+      <p class="text-sm text-gray-500 mb-6">Found ${matches.length} result${matches.length === 1 ? '' : 's'} for "<strong>${escapeHtml(q)}</strong>":</p>
+      ${matches.map(p => `
+        <article class="pb-8 border-b border-dotted border-[#bbbbbb]">
+          <h2 class="font-sans font-medium text-2xl sm:text-3xl text-[#75633f] hover:text-[#d49657] mb-2 leading-snug">
+            <a href="${p.url}">${escapeHtml(p.title)}</a>
+          </h2>
+          <div class="text-xs text-gray-500 mb-4 font-sans">
+            ${p.date}
+          </div>
+          <p class="text-base text-gray-700 leading-relaxed font-sans mb-4">
+            ${escapeHtml(p.excerpt)}
+          </p>
+          <a href="${p.url}" class="post-read-more-link">
+            Read More
+          </a>
+        </article>
+      `).join('')}
+    `;
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+});
+</script>

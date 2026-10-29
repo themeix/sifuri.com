@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Find your future by asking the right questions"
+date: 2013-08-07 10:00:30
+slug: find-your-future-by-asking-the-right-questions
+permalink: /find-your-future-by-asking-the-right-questions/
+categories:
+  - mentor
+tags:
+  []
+excerpt: "Not too long ago I met a bright recent college grad, who was trying to decide what to do for a year before she committed to medical school (which is a big commitment in so many many ways). Here’s m..."
+---
+
+<p>Not too long ago I met a bright recent college grad, who was trying to decide what to do for a year before she committed to medical school (which is a big commitment in so many many ways).</p>
+<p>Here&#8217;s my version of advice to college students or recent grads (and frankly it would be even better advice to high schoolers trying to pick a major or what to study (but I really don&#8217;t hang out with highschoolers that much since my boys are less than half that age!)).</p>
+<p>The best advice I can give is to think about the kinds of <a href="http://blog.codinghorror.com/so-you-want-to-be-a-programmer/">problems you love to solve</a>, including how you like to go about it. Then try things that seem to fit, and look for people who can identify with what works for you.</p>
+<p>This is what that bit of advice looks like after literally 13+ years of thinking about it. My personal turning point was talking to the partner I worked for at a large law firm. It was the day of his 34th anniversary with the firm, which was actually longer than I&#8217;d been alive. I thought about it for a bit, and even though I liked him then and still do, I realized that in 33 years, I wouldn&#8217;t really <em>want</em> his job (head of litigation, etc.). I quickly realized that I actually didn&#8217;t want that job in three years.</p>
+<p>So, rather than stop there, I kept going: whose job at this firm did I actually really want to have for the long term? I came up with one answer: the managing partner. And it only took about 15 seconds to realize that that was because he basically didn&#8217;t practice law but was instead focused on the business of running the firm and, at the time, acquiring other law firms. That sort of thinking comes from not asking yourself the relatively unhelpful question of &#8220;where do I want to be in five years?&#8221; but rather the vastly more interesting &#8220;where do i want to be in fifteen years?&#8221; The difference is that five years almost always leads to simply extending your current path out in the same direction (get a promotion, have your boss&#8217;s job). Fifteen years is enough to cause you to break the mental chain between your present and your future. That&#8217;s the right kind of question.</p>
+<p>What&#8217;s the next step? What do you do with that sort of realization? Just give up and say, &#8220;Oh, I do plane crashes and shipwrecks, so I might as well just consign myself to be unfulfilled?&#8221; Hell no &#8212; this is America, and I&#8217;m pretty much a typical guy and a typical New Yorker on this front: if something is broken, we start to fix it.</p>
+<p>What made it work for me was not that I tried to become a CEO next after being a litigation associate; no, I just had to figure out what easy next step I could make that would work for me, have a huge likelihood of success, and would bring me closer to my goal. For me, the easy first step was to simply switch to doing corporate legal work. That started with a handful of projects, and then, when I moved cross-country, I was determined to only do corporate work. Yes, I got lucky in that Silicon Valley law firms in 1999 were super hot and bothered for NYC associates from big firms and good schools. I had two great offers at two great firms (how I ended up at one and not the other has a few twists that I&#8217;ll save for another day). That was it. One easy decision, moving my potential long-term target, CEO of a company, closer to the center of my future. (I always picture this like the visual of the Death Star coming around the moon and the cone of fire on the screen as they get ready to blast the planet. It&#8217;s like that, only less destructive; the possible paths in front of you criss-cross lots of times, and the goal is to have each step bring your goal closer to the center, to the most likely path of your future.</p>
+<p>It sounds easy, but it&#8217;s hard to know yourself sometimes. The next best alternative is to learn the right questions to ask yourself to get to useful answers, the kind you can build a life on.</p>
+

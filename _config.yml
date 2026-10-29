@@ -1,0 +1,41 @@
+title: "Views of a Modern World"
+tagline: "Everything else Rick writes"
+description: "Views of a Modern World – Everything else Rick writes by Rick Colosimo"
+url: "https://sifuri.com"
+baseurl: ""
+future: true
+
+permalink: /:title/
+paginate: 4
+paginate_path: "/page/:num/"
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - _wp_data
+  - README.md

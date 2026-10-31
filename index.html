@@ -18,7 +18,7 @@ layout: default
 
             <!-- Post Meta -->
             <div class="text-xs text-gray-500 mb-4 font-sans">
-              By <span class="text-black">{{ post.author | default: "rickcolosimo" }}</span> / {{ post.date | date: "%B %-d, %Y" }} / Comments Off
+              By <a href="{{ '/author/rickcolosimo/' | relative_url }}" class="hover:underline font-medium text-black">{{ post.author | default: "rickColosimo" }}</a> / {{ post.date | date: "%B %-d, %Y" }} / Comments Off
             </div>
 
             <!-- Post Excerpt -->

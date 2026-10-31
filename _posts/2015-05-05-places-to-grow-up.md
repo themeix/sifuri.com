@@ -16,7 +16,7 @@ excerpt: "Okay, so I haven’t read through the methodology yet, but the data fr
 
 <p>Okay, so I haven’t read through the methodology yet, but the data from this <a href="https://myaccount.nytimes.com/auth/login?URI=http%3A%2F%2Fwww.nytimes.com%2Finteractive%2F2015%2F05%2F03%2Fupshot%2Fthe-best-and-worst-places-to-grow-up-how-your-area-compares.html%3Fsmid%3Dtw-share%26abt%3D0002%26abg%3D0%26_r%3D5&amp;REFUSE_COOKIE_ERROR=SHOW_ERROR">visualization and article in the NYT</a> sure do look interesting. Basically, I should either stay in Bergen County or move to Westchester.</p>
 <p>Here are the meaty questions:<br />
- <!--more--><br />
+<!--more--><br />
 -Why do some counties improve income as baseline income goes up, and why do some decrease future income as baseline income goes up? If I were peddling a social theory, I&#8217;d say one was fixed in favor of the house and one was redistributive. But I expect that&#8217;s simplistic.</p>
 <ul>
 <li>

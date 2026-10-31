@@ -7,7 +7,7 @@ permalink: /about-2/
 
 
 
-	<p>Hi! I&#8217;m Rick. I like to write. I mean, I &#8216;like&#8217; like to write. After switching to English as a major in <a href="https://allegheny.edu" target="_blank" rel="noopener">college</a> after three or four weeks of Chemistry/Political Science because &#8220;I wasn&#8217;t reading enough,&#8221; I put myself squarely in the word-guy camp. I like numbers, I really do, but numbers are facts; words are direction. The same numbers can lead to different interpretations, and that&#8217;s why they&#8217;re ultimately subordinate, but still critical, in shaping the world.</p>
+<p>Hi! I&#8217;m Rick. I like to write. I mean, I &#8216;like&#8217; like to write. After switching to English as a major in <a href="https://allegheny.edu" target="_blank" rel="noopener">college</a> after three or four weeks of Chemistry/Political Science because &#8220;I wasn&#8217;t reading enough,&#8221; I put myself squarely in the word-guy camp. I like numbers, I really do, but numbers are facts; words are direction. The same numbers can lead to different interpretations, and that&#8217;s why they&#8217;re ultimately subordinate, but still critical, in shaping the world.</p>
 <p>For the most part, the writings here are things that are personal or just don&#8217;t fit on my work blogs (<a href="https://rickcolosimo.com" target="_blank" rel="noopener">rickcolosimo.com</a> and <a href="https://thoughtstorm.com">thoughtstorm.com</a>). You never know whether you&#8217;ll get a blog post, a random idea, a poem, or a song.</p>
 <p>I&#8217;m a [currently] single dad. Find out <a href="/about-2/more-about-rick/">more about me</a> if you like.</p>
 <p>I&#8217;m a problem-solver by training, a Ranger by character, and an inventor by nature.</p>

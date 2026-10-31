@@ -15,12 +15,14 @@ layout: default
         {% endif %}
       </header>
 
-      <div class="space-y-12">
+      <div class="space-y-12" id="archive-posts-container">
         {% assign filtered_posts = site.posts %}
         {% if page.category %}
           {% assign filtered_posts = site.categories[page.category] %}
         {% elsif page.tag %}
           {% assign filtered_posts = site.tags[page.tag] %}
+        {% elsif page.author %}
+          {% assign filtered_posts = site.posts %}
         {% elsif page.year_month %}
           {% assign filtered_posts = "" | split: "" %}
           {% for post in site.posts %}
@@ -32,15 +34,15 @@ layout: default
         {% endif %}
 
         {% for post in filtered_posts %}
-          <article class="pb-10 border-b border-dotted border-[#bbbbbb]">
+          <article class="archive-article pb-10 border-b border-dotted border-[#bbbbbb]">
             <h2 class="font-sans text-2xl sm:text-3xl text-[#75633f] hover:text-[#d49657] leading-snug mb-2 font-medium">
               <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             </h2>
             <div class="text-xs text-gray-500 mb-4 font-sans">
-              {{ post.date | date: "%B %-d, %Y" }}
+              By <a href="{{ '/author/rickcolosimo/' | relative_url }}" class="hover:underline font-medium text-black">{{ post.author | default: "rickColosimo" }}</a> / {{ post.date | date: "%B %-d, %Y" }} / Comments Off
             </div>
             <div class="text-base text-[#424242] leading-relaxed mb-4 font-sans">
-              {{ post.excerpt | default: post.content | strip_html | truncatewords: 40 }}
+              {{ post.excerpt | default: post.content | strip_html | truncatewords: 45 }}
             </div>
             <a href="{{ post.url | relative_url }}" class="post-read-more-link" aria-label="Read more about {{ post.title }}">
               Read More
@@ -50,6 +52,9 @@ layout: default
           <p class="text-gray-500 font-sans">No posts found in this archive.</p>
         {% endfor %}
       </div>
+
+      <!-- Pagination Container -->
+      <div id="archive-pagination-wrap" class="pt-8"></div>
     </div>
 
     <!-- Sidebar Column (3 of 12 columns = 25% width) -->
@@ -59,3 +64,88 @@ layout: default
 
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var articles = document.querySelectorAll('.archive-article');
+    if (!articles.length) return;
+
+    var perPage = 4;
+    var totalPages = Math.ceil(articles.length / perPage);
+    if (totalPages <= 1) return;
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var currentPage = parseInt(urlParams.get('page')) || 1;
+    if (currentPage < 1) currentPage = 1;
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    function renderPage(page) {
+      currentPage = page;
+      var start = (page - 1) * perPage;
+      var end = start + perPage;
+
+      articles.forEach(function(art, idx) {
+        if (idx >= start && idx < end) {
+          art.style.display = 'block';
+        } else {
+          art.style.display = 'none';
+        }
+      });
+
+      renderPaginationButtons();
+    }
+
+    function renderPaginationButtons() {
+      var nav = document.getElementById('archive-pagination-wrap');
+      if (!nav) return;
+
+      var html = '<nav class="flex items-center justify-center gap-1.5 pt-6 pb-6 font-sans text-sm" aria-label="Pagination">';
+
+      // Prev Button
+      if (currentPage > 1) {
+        html += '<a href="?page=' + (currentPage - 1) + '" data-page="' + (currentPage - 1) + '" class="page-nav-link px-3.5 py-2 border border-gray-300 text-gray-700 hover:bg-[#a61f1b] hover:text-white hover:border-[#a61f1b] transition-colors rounded-none">« Prev</a>';
+      }
+
+      // Page numbers with ellipsis
+      for (var i = 1; i <= totalPages; i++) {
+        if (i === currentPage) {
+          html += '<span class="px-3.5 py-2 bg-[#a61f1b] text-white font-bold border border-[#a61f1b]">' + i + '</span>';
+        } else if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+          html += '<a href="?page=' + i + '" data-page="' + i + '" class="page-nav-link px-3.5 py-2 border border-gray-300 text-gray-700 hover:bg-[#a61f1b] hover:text-white hover:border-[#a61f1b] transition-colors">' + i + '</a>';
+        } else if (i === currentPage - 3 || i === currentPage + 3) {
+          html += '<span class="px-2 py-2 text-gray-500">…</span>';
+        }
+      }
+
+      // Next Button
+      if (currentPage < totalPages) {
+        html += '<a href="?page=' + (currentPage + 1) + '" data-page="' + (currentPage + 1) + '" class="page-nav-link px-3.5 py-2 border border-gray-300 text-gray-700 hover:bg-[#a61f1b] hover:text-white hover:border-[#a61f1b] transition-colors">Next »</a>';
+      }
+
+      html += '</nav>';
+      nav.innerHTML = html;
+
+      // Add click handlers
+      var links = nav.querySelectorAll('.page-nav-link');
+      links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var targetPage = parseInt(link.getAttribute('data-page'));
+          if (targetPage && targetPage !== currentPage) {
+            var newUrl = window.location.pathname + '?page=' + targetPage;
+            history.pushState({ page: targetPage }, '', newUrl);
+            renderPage(targetPage);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+      });
+    }
+
+    window.addEventListener('popstate', function(e) {
+      var p = (e.state && e.state.page) || parseInt(new URLSearchParams(window.location.search).get('page')) || 1;
+      renderPage(p);
+    });
+
+    renderPage(currentPage);
+  });
+</script>

@@ -7,7 +7,7 @@ permalink: /about-2/more-about-rick/
 
 
 
-	<h2>Personal Profile</h2>
+<h2>Personal Profile</h2>
 <p>I spent five years in the Army before law school: I jumped out of planes and helicopters, slept in the mud and the forest, did lots of pushups, lived in Hawaii, and never went to war but have complete respect for those who have. I have heroes.</p>
 <p>I graduated college early, including spending my middle year of the three in Paris, taking classes at the Sorbonne while exploring all around. My favorite view in all of Paris is looking at the Eiffel Tower from Trocadero, above the fountains.</p>
 <p>I grew up in the suburbs in what I call upstate New York, but what folks in the City call &#8220;western NY,&#8221; i.e., Rochester. Public schools were good where I went, and I had a good time with my friends and running track, making fun of the cool soccer kids, and generally being irreverent.</p>

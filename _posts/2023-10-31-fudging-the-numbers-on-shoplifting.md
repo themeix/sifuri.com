@@ -13,7 +13,7 @@ excerpt: "The mid-2023 stories about retail theft, in spite of videos of 20 or 3
 
 
 
-	<p>The mid-2023 stories about retail theft, in spite of videos of 20 or 30 people swarming stores to overwhelm attempts to detain them, always felt off to me.</p>
+<p>The mid-2023 stories about retail theft, in spite of videos of 20 or 30 people swarming stores to overwhelm attempts to detain them, always felt off to me.</p>
 <p>Other crime statistics don&#8217;t match up, and statistics from industry groups are a little loose with definitions and also don&#8217;t make sense. You can&#8217;t say something is up 50% and then say your overall shrink is only a smidge higher.</p>
 <p>This <a href="https://www.cnn.com/2023/10/27/business/crime-spree-retailers-are-actually-overstating-the-extent-of-theft-report-says/index.html">article</a> seems to bear this out. I think we&#8217;ll see *real* numbers when the 10-Ks come out and the audited inventory numbers show us what&#8217;s what.</p>
 <p>&nbsp;</p>

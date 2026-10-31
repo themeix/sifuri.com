@@ -15,7 +15,7 @@ layout: default
 
         <!-- Post Meta -->
         <div class="text-xs text-gray-500 mb-8 pb-4 border-b border-dotted border-[#bbbbbb] font-sans">
-          By <span class="text-black">{{ page.author | default: "rickcolosimo" }}</span> / {{ page.date | date: "%B %-d, %Y" }} / Comments Off
+          By <a href="{{ '/author/rickcolosimo/' | relative_url }}" class="hover:underline font-medium text-black">{{ page.author | default: "rickColosimo" }}</a> / {{ page.date | date: "%B %-d, %Y" }} / Comments Off
         </div>
 
         <!-- Post Body -->
@@ -30,7 +30,8 @@ layout: default
               <div>
                 <span class="font-bold text-black uppercase tracking-wider text-xs">Categories:</span>
                 {% for cat in page.categories %}
-                  <a href="{{ '/category/' | append: cat | slugify | append: '/' | relative_url }}" class="text-[#a61f1b] hover:underline mr-2">{{ cat }}</a>
+                  {% assign cat_slug = cat | slugify %}
+                  <a href="{{ '/category/' | append: cat_slug | append: '/' | relative_url }}" class="text-[#a61f1b] hover:underline mr-2">{{ cat }}</a>
                 {% endfor %}
               </div>
             {% endif %}
@@ -39,7 +40,8 @@ layout: default
               <div>
                 <span class="font-bold text-black uppercase tracking-wider text-xs">Tags:</span>
                 {% for tag in page.tags %}
-                  <a href="{{ '/tag/' | append: tag | slugify | append: '/' | relative_url }}" class="text-gray-700 hover:text-[#a61f1b] hover:underline mr-2">#{{ tag }}</a>
+                  {% assign tag_slug = tag | slugify %}
+                  <a href="{{ '/tag/' | append: tag_slug | append: '/' | relative_url }}" class="text-gray-700 hover:text-[#a61f1b] hover:underline mr-2">#{{ tag }}</a>
                 {% endfor %}
               </div>
             {% endif %}

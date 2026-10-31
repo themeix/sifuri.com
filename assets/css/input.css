@@ -223,3 +223,17 @@
 .prose-custom iframe {
   max-width: 100%;
 }
+.prose-custom pre,
+.entry-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background-color: #f8f8f8;
+  padding: 1rem;
+  border-radius: 4px;
+}
+.prose-custom code,
+.entry-content code {
+  word-break: break-word;
+}

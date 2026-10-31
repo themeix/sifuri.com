@@ -1,45 +1,48 @@
-{% if paginator.total_pages > 1 %}
+{% assign p = page.paginator | default: paginator %}
+{% if p.total_pages > 1 %}
 <nav class="border-t border-b border-dotted border-[#bbbbbb] py-3 my-8" aria-label="Pagination">
   <ul class="flex items-center justify-end flex-wrap gap-1 text-[16px] font-sans">
     
     <!-- Previous Page -->
-    {% if paginator.previous_page %}
+    {% if p.previous_page %}
       <li>
-        <a href="{{ paginator.previous_page_path | relative_url }}" class="px-4 py-2 text-black hover:bg-[#d49657] hover:text-white transition-colors" aria-label="Previous Page">
+        <a href="{{ p.previous_page_path | relative_url }}" class="px-4 py-2 text-black hover:bg-[#d49657] hover:text-white transition-colors" aria-label="Previous Page">
           « Prev
         </a>
       </li>
     {% endif %}
 
     <!-- Page 1 -->
-    {% if paginator.page == 1 %}
+    {% assign first_url = p.first_page_path | default: '/' %}
+    {% if p.page == 1 %}
       <li>
         <span class="px-4 py-2 bg-[#a61f1b] text-white font-medium" aria-current="page">1</span>
       </li>
     {% else %}
       <li>
-        <a href="{{ '/' | relative_url }}" class="px-4 py-2 text-black hover:bg-[#d49657] hover:text-white transition-colors">1</a>
+        <a href="{{ first_url | relative_url }}" class="px-4 py-2 text-black hover:bg-[#d49657] hover:text-white transition-colors">1</a>
       </li>
     {% endif %}
 
     <!-- Ellipsis before current page if far from 1 -->
-    {% if paginator.page > 4 %}
+    {% if p.page > 4 %}
       <li><span class="px-2 py-2 text-gray-500">…</span></li>
     {% endif %}
 
     <!-- Nearby Pages -->
-    {% for page_num in (2..paginator.total_pages) %}
-      {% if page_num == paginator.page %}
-        {% unless page_num == 1 or page_num == paginator.total_pages %}
+    {% assign pattern = p.paginate_path | default: site.paginate_path %}
+    {% for page_num in (2..p.total_pages) %}
+      {% if page_num == p.page %}
+        {% unless page_num == 1 or page_num == p.total_pages %}
           <li>
             <span class="px-4 py-2 bg-[#a61f1b] text-white font-medium" aria-current="page">{{ page_num }}</span>
           </li>
         {% endunless %}
-      {% elsif page_num > 1 and page_num < paginator.total_pages %}
-        {% assign diff = page_num | minus: paginator.page %}
+      {% elsif page_num > 1 and page_num < p.total_pages %}
+        {% assign diff = page_num | minus: p.page %}
         {% if diff >= -2 and diff <= 2 %}
           <li>
-            <a href="{{ site.paginate_path | replace: ':num', page_num | relative_url }}" class="px-4 py-2 text-black hover:bg-[#d49657] hover:text-white transition-colors">
+            <a href="{{ pattern | replace: ':num', page_num | relative_url }}" class="px-4 py-2 text-black hover:bg-[#d49657] hover:text-white transition-colors">
               {{ page_num }}
             </a>
           </li>
@@ -48,30 +51,30 @@
     {% endfor %}
 
     <!-- Ellipsis before last page if far from last -->
-    {% assign last_minus_3 = paginator.total_pages | minus: 3 %}
-    {% if paginator.page < last_minus_3 %}
+    {% assign last_minus_3 = p.total_pages | minus: 3 %}
+    {% if p.page < last_minus_3 %}
       <li><span class="px-2 py-2 text-gray-500">…</span></li>
     {% endif %}
 
     <!-- Last Page -->
-    {% if paginator.total_pages > 1 %}
-      {% if paginator.page == paginator.total_pages %}
+    {% if p.total_pages > 1 %}
+      {% if p.page == p.total_pages %}
         <li>
-          <span class="px-4 py-2 bg-[#a61f1b] text-white font-medium" aria-current="page">{{ paginator.total_pages }}</span>
+          <span class="px-4 py-2 bg-[#a61f1b] text-white font-medium" aria-current="page">{{ p.total_pages }}</span>
         </li>
       {% else %}
         <li>
-          <a href="{{ site.paginate_path | replace: ':num', paginator.total_pages | relative_url }}" class="px-4 py-2 text-black hover:bg-[#d49657] hover:text-white transition-colors">
-            {{ paginator.total_pages }}
+          <a href="{{ pattern | replace: ':num', p.total_pages | relative_url }}" class="px-4 py-2 text-black hover:bg-[#d49657] hover:text-white transition-colors">
+            {{ p.total_pages }}
           </a>
         </li>
       {% endif %}
     {% endif %}
 
     <!-- Next Page -->
-    {% if paginator.next_page %}
+    {% if p.next_page %}
       <li>
-        <a href="{{ paginator.next_page_path | relative_url }}" class="px-4 py-2 text-black hover:bg-[#d49657] hover:text-white transition-colors" aria-label="Next Page">
+        <a href="{{ p.next_page_path | relative_url }}" class="px-4 py-2 text-black hover:bg-[#d49657] hover:text-white transition-colors" aria-label="Next Page">
           Next »
         </a>
       </li>
